@@ -34,7 +34,7 @@ const CounterApp = ({ initialCount }: CounterAppProps) => {
 	return (
 		<>
 			<h1>Counter App</h1>
-			<p>Count: {counter}</p>
+			<p className="text-2xl/7">Count: {counter}</p>
 			<button className="counter-btn" onClick={increment}>
 				Increment
 			</button>
