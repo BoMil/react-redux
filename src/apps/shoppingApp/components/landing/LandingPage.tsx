@@ -1,10 +1,9 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ShoppingHeader from "../header/ShoppingHeader";
 import { useEffect } from "react";
+import CartPage from "../cart/CartPage";
 
-interface LandingPageProps {}
-
-const LandingPage = (props: LandingPageProps) => {
+const LandingPage = () => {
 	// This will be called once when the component is mounted
 	useEffect(() => {
 		console.log("App is mounted");
@@ -14,8 +13,8 @@ const LandingPage = (props: LandingPageProps) => {
 	return (
 		<>
 			<ShoppingHeader />
-			{/* <h1 className="text-center text-[20px]">Landing Page</h1> */}
-
+			{/* Will be displayed on the right side */}
+			<CartPage />
 			<Outlet />
 		</>
 	);

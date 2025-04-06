@@ -16,6 +16,7 @@ class Rating {
     category: string;
     image: string;
     rating: Rating;
+    cartQuantity: number;
   
     constructor(data: any) {
       this.id = data?.id ?? 0;
@@ -25,5 +26,6 @@ class Rating {
       this.category = data?.category ?? '';
       this.image = data?.image ?? '';
       this.rating = new Rating(data?.rating);
+      this.cartQuantity = data?.cartQuantity ?? 1;
     }
 }

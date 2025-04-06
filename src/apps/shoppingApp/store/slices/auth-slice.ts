@@ -5,6 +5,16 @@ export interface ShopLoginState {
     username: string;
 }
 
+// export class LoginState implements ShopLoginState {
+//     isLoggedIn: boolean;
+//     username: string;
+
+//     constructor(isLoggedIn?: boolean, username?: string) {
+//         this.isLoggedIn = isLoggedIn ?? false;
+//         this.username = username ?? '';
+//     }
+// }
+
 function extractStateFromSessionStorage(): ShopLoginState {
     return {
         isLoggedIn: false,
@@ -36,7 +46,6 @@ const authSlice = createSlice({
         logout: (state) => {
 			state.isLoggedIn = false;
             state.username = '';
-
         }
 	},
 });

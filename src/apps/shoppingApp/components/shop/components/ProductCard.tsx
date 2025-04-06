@@ -2,9 +2,10 @@ import { Product } from "../../../models/product";
 
 interface ProductCardProps {
 	product: Product;
+	addToCart: (product: Product) => void;
 }
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, addToCart }: ProductCardProps) => {
 	return (
 		<>
 			<div className="relative m-5 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
@@ -64,12 +65,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
 						</div>
 					</div>
 					<a
-						href="#"
+						onClick={() => addToCart(product)}
 						className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-						<svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
 							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
+								strokeLinecap="round"
+								strokeLinejoin="round"
 								d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
 							/>
 						</svg>
@@ -84,21 +85,3 @@ const ProductCard = ({ product }: ProductCardProps) => {
 };
 
 export default ProductCard;
-
-// {/* <div className="bg-white border border-gray-200 rounded-lg shadow-md p-3 h-[650px]">
-// {/* <img className="h-48 w-full object-cover md:h-full md:w-48" src={product.image} alt={product.title} /> */}
-// <img className="cursor-pointer object-contain object-center scale-75 hover:scale-120 transition-transform h-[200px]" src={product.image} alt={product.title} />
-
-// <section className="h-[300px] overflow-hidden ">
-//     <h2 className="text-lg font-bold text-center">{product.title}</h2>
-//     <span className="text-base font-semibold">Description:</span> <p className="text-sm text-ellipsis">{product.description}</p>
-// </section>
-
-// <section className=" h-[100px]">
-//     <span className="text-base font-semibold">Price:</span>
-//     <p className="text-2xl font-bold">
-//         {product.price} <span className="text-base font-semibold">{valute}</span>
-//     </p>
-//     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Add to cart</button>
-// </section>
-// </div> */}
